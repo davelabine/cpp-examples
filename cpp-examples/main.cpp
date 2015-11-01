@@ -9,7 +9,20 @@
 #include <iostream>
 #include <string>
 
-/*
+/********* LAST K LINES!!!! **************
+ 
+ Write a method to print the last K lines of an input file using C++
+ 
+ Any questions on assumptions?
+ - Assume this is an ASCII text file.
+ 
+ Brute force:
+ - can just read the whole file into and array of strings, then print out the last K.  That's a terrible waste of memory though.
+ - We must be able to peek for end of line.  One pass to peek at each line and search for EOF, counting lines.  Once we reach EOF we can calculate the last k lines and scan the file again, just printing those.  That's two passes of the file, though
+ - Why don't we allocate K lines to read, then start to read them.  Once we reach K+1 we start to overwrite the old lines.  We'll need to keep track of where the "start" is with a counter - c.  Last K lines would start at c+1 mod k and end at c.
+
+
+/********* REVERSE A STRING! *************
  Ok, this is a classic.
  
  Read the first character into a temporary space.
